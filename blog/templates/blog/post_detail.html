@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     {% extends 'blog/base.html' %}
 
     {% block content %}
@@ -11,3 +12,19 @@
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endblock %}
+=======
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+>>>>>>> b5faffc96a8204c4b541e943a7a6052b4cfb40a0
